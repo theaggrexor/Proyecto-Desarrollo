@@ -1,30 +1,35 @@
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 
 function LoginForm() {
   const [email] = useState('');
   const [password] = useState('');
   const [isRegistering, setIsRegistering] = useState(false);
+  
+  const toggleForm = () => {
+    setIsRegistering(!isRegistering);
+  };
 
   return (
-    <form >
-    <div>
-      <label>Email:</label>
-      <input type="email" value={email} />
-    </div>
-    <div>
-      <label>Contraseña:</label>
-      <input type="password" value={password} />
-    </div>
-    {isRegistering ? (
-      <button type="submit">Registrarse</button>
-    ) : (
+    <Router>
+    <form>
+      <div>
+        <label>Email:</label>
+        <input type="email" value={email} required />
+      </div>
+      <div>
+        <label>Contraseña:</label>
+        <input type="password" value={password} required/>
+      </div>
       <button type="submit">Iniciar Sesión</button>
-    )}
-    <br></br><a type="button" onClick={() => setIsRegistering(!isRegistering)}>
-      {isRegistering ? '¿Ya tienes una cuenta?' : '¿No tienes una cuenta?'}
-    </a>
-  </form>
+      <br></br>
+      <Link to="/Registro" onClick={toggleForm}>
+        ¿No tienes una cuenta? Regístrate aquí.
+      </Link>
+    </form>
+    </Router>
   );
-};
+}
 
 export default LoginForm;
+
