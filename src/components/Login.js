@@ -14,6 +14,7 @@ function LoginForm() {
     <Router>
     <form>
       <div>
+        <h1>Login</h1>
         <label>Email:</label>
         <input type="email" value={email} required />
       </div>
