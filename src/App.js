@@ -7,14 +7,20 @@ import { Products } from './components/Products.jsx'
 import { IS_DEVELOPMENT } from './config.js'
 import { Footer } from './components/Footer.jsx'
 import { useFilters } from './hooks/useFilters.js'
-import { Filters } from './components/Filters'
+import { products as initialProducts } from './mocks/products.json'
 
 function App() {
+  const { filterProducts } = useFilters()
+
+  const filteredProducts = filterProducts(initialProducts)
 
   return (
     <CartProvider>
       <div className="bg-gray-100 font-sans w-full h-full items-center justify-center">
         <Home/>
+        <Cart/>
+        <Products products={filteredProducts} />
+        <Footer/>
       </div>
     </CartProvider>
   );

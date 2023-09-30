@@ -1,11 +1,10 @@
 import { useState } from "react";
-import { useId } from "react";
 import { Link } from "react-router-dom";
 import Login from "./Login";
-import { CartIcon, ClearCartIcon } from "./Icons.jsx";
-import { useCart } from "../hooks/useCart.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { Cart } from './Cart.jsx'
+import { Filters } from './Filters'
 
 export default function NavBar() {
   let Links = [];
@@ -18,7 +17,7 @@ export default function NavBar() {
       <div className="md:flex items-center justify-between bg-white py-4 px-4">
         <div className="cursor-pointer flex items-center">
           <Link to="/">
-            <img className="h-10" src="/" alt="Logo" />
+            <img className="h-10" src="/" alt="Logo FashionCode" />
           </Link>
         </div>
 
@@ -27,6 +26,10 @@ export default function NavBar() {
           className="text-3xl absolute right-8 top-6 cursor-pointer md:hidden"
         >
           <ion-icon name={open ? "close" : "menu"}></ion-icon>
+        </div>
+
+        <div className="text-center md:w-auto w-full">
+          <h1 className="text-3xl font-bold">FashionCode</h1>
         </div>
 
         <ul
@@ -61,13 +64,13 @@ export default function NavBar() {
               </div>
             )}
           </li>
-          <a href="/tu-enlace">
-            <FontAwesomeIcon
-              icon={faCartShopping}
-              style={{ fontSize: "24px"}}
-            />
-          </a>
+          <li className="md:ml-5 md:text-center md:mr-4 md:pr-4 md:text-sm text-xl md:my-0 my-7">
+            <Cart/>
+          </li>
         </ul>
+      </div>
+      <div className="text-center">
+      <Filters/>
       </div>
     </div>
   );
