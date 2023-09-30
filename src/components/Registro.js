@@ -6,54 +6,57 @@ function RegistroForm() {
   const [password, setPassword] = useState('');
 
   return (
-    <div >
-      <h1>Registro</h1>
-      <form>
-        <div>
-          <label htmlFor="nombre" >
+    <div className="min-h-screen flex items-center justify-center">
+      <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <h1 className="text-2xl font-semibold mb-4">Registro</h1>
+        <div className="mb-4">
+          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="nombre">
             Nombre:
           </label>
           <input
             type="text"
-            className="form-control"
             id="nombre"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             value={nombre}
             onChange={(e) => setNombre(e.target.value)}
             required
           />
         </div>
-        <div>
-          <label htmlFor="email" >
+        <div className="mb-4">
+          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
             Correo Electrónico:
           </label>
           <input
             type="email"
-            className="form-control"
             id="email"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
           />
         </div>
-        <div>
-          <label htmlFor="password" >
+        <div className="mb-4">
+          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
             Contraseña:
           </label>
           <input
             type="password"
-            className="form-control"
             id="password"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
         </div>
-        <button type="submit" >
+        <button
+          type="submit"
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+        >
           Registrarse
         </button>
       </form>
     </div>
   );
-  }
+}
 
-export default RegistroForm
+export default RegistroForm;
