@@ -1,39 +1,36 @@
-import { useId } from 'react'
-import { useFilters } from '../hooks/useFilters.js'
+import React from 'react';
+import { useId } from 'react';
+import { useFilters } from '../hooks/useFilters.js';
 
-export function Filters () {
-  const { filters, setFilters } = useFilters()
+export function Filters() {
+  const { filters, setFilters } = useFilters();
 
-  const minPriceFilterId = useId()
-  const categoryFilterId = useId()
+  const minPriceFilterId = useId();
+  const categoryFilterId = useId();
 
   const handleChangeMinPrice = (event) => {
-    setFilters(prevState => ({
+    setFilters((prevState) => ({
       ...prevState,
-      minPrice: event.target.value
-    }))
-  }
+      minPrice: event.target.value,
+    }));
+  };
 
   const handleChangeCategory = (event) => {
-    // ⬇️ ESTO HUELE MAL
-    // estamos pasando la función de actualizar estado
-    // nativa de React a un componente hijo
-    setFilters(prevState => ({
+    setFilters((prevState) => ({
       ...prevState,
-      category: event.target.value
-    }))
-  }
+      category: event.target.value,
+    }));
+  };
 
   return (
-    <section className='filters'>
-
+    <section className="filters-container">
       <div>
         <label htmlFor={minPriceFilterId}>Precio a partir de:</label>
         <input
-          type='range'
+          type="range"
           id={minPriceFilterId}
-          min='0'
-          max='1000'
+          min="1000"
+          max="7000"
           onChange={handleChangeMinPrice}
           value={filters.minPrice}
         />
@@ -42,14 +39,19 @@ export function Filters () {
 
       <div>
         <label htmlFor={categoryFilterId}>Categoría</label>
-        <select id={categoryFilterId} onChange={handleChangeCategory}>
-          <option value='all'>Todas</option>
-          <option value='laptops'>Portátiles</option>
-          <option value='smartphones'>Celulares</option>
+        <select
+          id={categoryFilterId}
+          onChange={handleChangeCategory}
+          value={filters.category}
+          className="category-select"
+        >
+          <option value="all">Todas</option>
+          <option value="women">Mujeres</option>
+          <option value="men">Hombres</option>
+          <option value="kids">Niños</option>
+          <option value="accessories">Accesorios</option>
         </select>
       </div>
-
     </section>
-
-  )
+  );
 }

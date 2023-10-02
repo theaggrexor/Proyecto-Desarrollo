@@ -7,8 +7,11 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        sans: ['Readex Pro', ...defaultTheme.fontFamily.sans],
+      backgroundColor: {
+        'gray-dark': '#333', // Agregar un nuevo color de fondo personalizado
+      },
+      textColor: {
+        'white': '#fff', // Agregar un nuevo color de texto personalizado
       },
     },
   },

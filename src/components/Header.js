@@ -1,10 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Login from "./Login";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
-import { Cart } from './Cart.jsx'
-import { Filters } from './Filters'
+import { Cart } from "./Cart.jsx";
+import { Filters } from "./Filters";
 
 export default function NavBar() {
   let Links = [];
@@ -13,11 +11,15 @@ export default function NavBar() {
   let [dropdownVisible, setDropdownVisible] = useState(false);
 
   return (
-    <div className="shadow-md w-full fixed top-0 left-0">
-      <div className="md:flex items-center justify-between bg-white py-4 px-4">
+    <div className="fixed">
+      <div className="md:flex items-center justify-between px-5">
         <div className="cursor-pointer flex items-center">
           <Link to="/">
-            <img className="h-10" src="/" alt="Logo FashionCode" />
+            <img
+              className="h-10"
+              src="https://th.bing.com/th/id/OIP.9nB7zDTSjd36vcaisOYNlQHaFI?w=255&h=180&c=7&r=0&o=5&pid=1.7"
+              alt="Logo FashionCode"
+            />
           </Link>
         </div>
 
@@ -29,7 +31,9 @@ export default function NavBar() {
         </div>
 
         <div className="text-center md:w-auto w-full">
-          <h1 className="text-3xl font-bold">FashionCode</h1>
+          <h1 className="text-3xl font-bold text-indigo-600 mx-auto ml-auto lg:ml-0">
+            FashionCode
+          </h1>
         </div>
 
         <ul
@@ -45,7 +49,7 @@ export default function NavBar() {
               <Link
                 to={link.link}
                 onClick={() => setOpen(!open)}
-                className="text-black hover:text-gray-500 duration-500"
+                className="text-gray-800 hover:text-indigo-600 duration-500"
               >
                 {link.name}
               </Link>
@@ -54,7 +58,7 @@ export default function NavBar() {
           <li className="md:ml-5 md:text-center md:mr-4 md:pr-4 md:text-sm text-xl md:my-0 my-7">
             <button
               onClick={() => setDropdownVisible(!dropdownVisible)}
-              className="text-black hover:text-gray-500 duration-500"
+              className="text-gray-800 hover:text-indigo-600 duration-500"
             >
               {dropdownVisible ? "Cerrar" : "INICIAR SESIÓN"}
             </button>
@@ -65,12 +69,12 @@ export default function NavBar() {
             )}
           </li>
           <li className="md:ml-5 md:text-center md:mr-4 md:pr-4 md:text-sm text-xl md:my-0 my-7">
-            <Cart/>
+            <Cart />
           </li>
         </ul>
       </div>
       <div className="text-center">
-      <Filters/>
+        <Filters />
       </div>
     </div>
   );

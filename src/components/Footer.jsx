@@ -13,7 +13,11 @@ export function Footer() {
           </div>
           <div className="col-span-1 md:col-span-1">
             <h4 className="text-lg font-semibold">Acerca de nosotros</h4>
-            <p>Descripción breve de FashionNova y su misión.</p>
+            <p>
+              Tu tienda de ropa para estar siempre a la moda. Descubre las
+              últimas tendencias y estilos en nuestra colección. Exprésate a
+              través de la moda en FashionCode.
+            </p>
           </div>
           <div className="col-span-1 md:col-span-1">
             <h4 className="text-lg font-semibold">
@@ -21,22 +25,22 @@ export function Footer() {
             </h4>
             <ul className="list-inline">
               <li className="list-inline-item">
-                <a href="#">
+                <a href="#" target="_blank">
                   <i className="fab fa-facebook text-xl"></i>
                 </a>
               </li>
               <li className="list-inline-item">
-                <a href="#">
+                <a href="#" target="_blank">
                   <i className="fab fa-twitter text-xl"></i>
                 </a>
               </li>
               <li className="list-inline-item">
-                <a href="#">
+                <a href="#" target="_blank">
                   <i className="fab fa-instagram text-xl"></i>
                 </a>
               </li>
               <li className="list-inline-item">
-                <a href="#">
+                <a href="#" target="_blank">
                   <i className="fab fa-pinterest text-xl"></i>
                 </a>
               </li>

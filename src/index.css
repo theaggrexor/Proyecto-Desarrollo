@@ -13,6 +13,10 @@
     font-family: 'Readex Pro', sans-serif;
   }
 }
+*{
+  padding: 0;
+  margin: 0;
+}
 
 body {
   margin: 0;
@@ -22,6 +26,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(243 244 246);
+  
 }
 
 code {
@@ -80,12 +85,12 @@ code {
 }
 
 .cart-button ~ input:checked ~ .cart {
-  height: 90%;
+  height: 100%;
   display: block;
-  margin-top: 72px;
+  margin-top: 80px;
 }
 .products {
-  margin-top: 100px;
+  margin-top: 170px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -126,9 +131,103 @@ code {
 .products img {
   border-radius: 4px;
   width: 100%;
-  aspect-ratio: 16/9;
+  aspect-ratio: 17/20;
   display: block;
   object-fit: cover;
   background: #fff;
 }
+/* Estilos para el encabezado fijo */
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  /* Añade más estilos según tus preferencias */
+}
+/* Estilos personalizados para el encabezado */
+.fixed {
+  background-color: #fff ;
+  color: black; /* Cambiar el color de fondo a un gris oscuro */
+}
+
+.fixed img {
+  height: 5rem; /* Cambiar el color del texto a blanco */
+}
+
+/* Estilos para centrar la sección de filtros */
+.filters-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f5f5f5; /* Cambia el color de fondo a tu elección */
+  padding: 20px; /* Ajusta el espacio alrededor de la sección */
+}
+
+/* Estilos para los elementos dentro de la sección de filtros */
+.filter {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px; /* Espacio entre los elementos */
+}
+
+/* Estilos para resaltar la categoría seleccionada */
+.category-select {
+  border: 2px solid transparent;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+/* Cambia el color de fondo y borde al seleccionar la categoría */
+.category-select:focus {
+  border-color: black;
+  background-color: #f0f0f0; /* Cambia el color de fondo al seleccionar */
+}
+
+
+
+/* Estilos generales del header para pantallas pequeñas */
+@media (max-width: 767px) {
+  /* Estilos para el contenedor del header */
+  .fixed {
+    position: relative;
+    z-index: 1000; /* Asegura que el header esté por encima del contenido */
+  }
+
+  /* Estilos para el botón del menú */
+  .text-3xl {
+    font-size: 24px;
+  }
+
+  /* Estilos para el menú desplegable */
+  .md:flex {
+    display: none; /* Oculta el menú desplegable por defecto */
+  }
+
+  /* Estilos para el botón de cerrar del menú */
+  .md:hidden {
+    display: inline-block; /* Muestra el botón de cerrar del menú */
+  }
+
+  /* Estilos para el título del sitio */
+  .text-3xl.font-bold {
+    font-size: 24px;
+    text-align: center; /* Centra el título del sitio en pantalla pequeña */
+    margin-top: 10px; /* Añade espacio arriba del título */
+  }
+
+  /* Estilos para el botón "Iniciar Sesión" */
+  .text-black {
+    color: black;
+    text-decoration: none; /* Quita la subraya del enlace */
+    margin-top: 10px; /* Añade espacio arriba del botón */
+    display: block; /* Hace que el botón ocupe todo el ancho disponible */
+    text-align: center; /* Centra el texto del botón */
+  }
+}
+
+
 

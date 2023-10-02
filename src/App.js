@@ -7,12 +7,13 @@ import { Products } from './components/Products.jsx'
 import { IS_DEVELOPMENT } from './config.js'
 import { Footer } from './components/Footer.jsx'
 import { useFilters } from './hooks/useFilters.js'
-import { products as initialProducts } from './mocks/products.json'
+import products from './mocks/products.json';
+
 
 function App() {
   const { filterProducts } = useFilters()
 
-  const filteredProducts = filterProducts(initialProducts)
+  const filteredProducts = filterProducts(products)
 
   return (
     <CartProvider>
