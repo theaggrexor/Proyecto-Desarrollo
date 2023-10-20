@@ -141,7 +141,7 @@ code {
   margin-top: 80px;
 }
 .products {
-  margin-top: 170px;
+  margin-top: 20px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -149,7 +149,7 @@ code {
 
 .products ul {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(1, 1fr);
   gap: 1rem;
 }
 
@@ -160,7 +160,6 @@ code {
   box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   background: #111;
-  color: #fff;
   padding: 1rem;
 }
 
@@ -280,5 +279,10 @@ code {
 @media screen and (max-width: 400px) {
   .card {
     flex: 0 0 calc(100% - 20px);
+  }
+}
+@media (min-width: 768px) {
+  .products ul {
+    grid-template-columns: repeat(4, 1fr);
   }
 }

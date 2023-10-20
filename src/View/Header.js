@@ -4,7 +4,10 @@ import { useNavigate } from 'react-router-dom';
 
 export function NavBar () {
   const navigate = useNavigate();
-  
+
+  const handle = () => {
+    navigate('*');
+  };  
   const handleLogin = () => {
     navigate('/Login');
   };
@@ -41,6 +44,7 @@ export function NavBar () {
                 width="30%"
                 height="auto"
                 className="d-inline-block align-top"
+                onClick={handle}
               />{" "}
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -58,3 +62,4 @@ export function NavBar () {
     </div>
   );
 }
+export default NavBar;

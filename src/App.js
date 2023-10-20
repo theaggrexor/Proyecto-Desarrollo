@@ -1,6 +1,6 @@
 import React from "react";
 import Home from "./View/Home";
-import Productos from "./View/Producto";
+import Productos from "./Producto";
 import Login from "./View/Login";
 import Contacto from "./View/Contacto";
 import Blog from "./View/blog";

@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { NavBar } from "./Header";
 import { Cart } from "../components/Cart.jsx";
-import { Filters } from "../components/Filters";
 import Card from "./Cartas-home";
 import { Footer } from "./Footer.jsx";
 import SliderComponent from "./Slider";
