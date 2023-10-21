@@ -19,7 +19,8 @@ export function Products({ products }) {
             <li key={product.id} className="p-4 bg-white rounded-lg shadow-md">
               <img src={product.image} alt={product.title} className="w-full h-auto" />
               <div className="mt-2">
-                <strong className="text-xl">{product.title}</strong> - ${product.price}
+                <strong className="text-xl">{product.title}</strong><br></br>Precio: ${product.price}<br></br>
+                Talla: {product.size}
               </div>
               <div className="mt-2">
                 <button

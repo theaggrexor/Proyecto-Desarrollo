@@ -1,24 +1,29 @@
 import { React } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
-export function NavBar () {
+export function NavBar() {
   const navigate = useNavigate();
 
   const handle = () => {
-    navigate('*');
-  };  
+    navigate("*");
+  };
   const handleLogin = () => {
-    navigate('/Login');
+    navigate("/Login");
   };
   const handleProductos = () => {
-    navigate('/Producto');
+    navigate("/Producto");
   };
   const handleContacto = () => {
-    navigate('/Contacto');
+    navigate("/Contacto");
   };
   const handleBlog = () => {
-    navigate('/Blog');
+    navigate("/Blog");
+  };
+  const handleCarrito = () => {
+    navigate("/Carrito");
   };
 
   return (
@@ -49,12 +54,12 @@ export function NavBar () {
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
-              <Nav className="me-auto"></Nav>
-              <Nav>
+              <Nav className="ms-auto">
                 <Nav.Link onClick={handleProductos}>Productos</Nav.Link>
                 <Nav.Link onClick={handleContacto}>Contacto</Nav.Link>
                 <Nav.Link onClick={handleBlog}>Blog</Nav.Link>
               </Nav>
+              <FontAwesomeIcon icon={faCartShopping} onClick={handleCarrito}/>
             </Navbar.Collapse>
           </Container>
         </Navbar>

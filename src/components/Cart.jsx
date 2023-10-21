@@ -1,55 +1,49 @@
-import { useId } from 'react'
-import { CartIcon, ClearCartIcon } from './Icons.jsx'
-import { useCart } from '../hooks/useCart.js'
+import { useId } from "react";
+import { useCart } from "../hooks/useCart.js";
+import { CartIcon, RemoveFromCartIcon } from "./Icons.jsx";
 
-function CartItem ({ image, price, title, quantity, addToCart }) {
-  console.log('Thumbnail:', image);
+function CartItem({ image, price, title, size }) {
+  const { clearCart } = useCart();
+  const { ConfirmCart } = useCart();
+
+  console.log("Thumbnail:", image);
   return (
-    <li>
-      <img
-        src={image}
-        alt={title}
-      />
-      <div>
-        <strong>{title}</strong> - ${price}
+    <>
+      <div className="cart">
+      <div className="cart-info">
+        <img src={image} alt={title} />
+        <h3>{title}</h3>
+        <p>Talla: {size}</p>
+        <p>Precio: ${price}</p>
       </div>
-
-      <footer>
-        <small>
-          Qty: {quantity}
-        </small>
-        <button onClick={addToCart}>+</button>
-      </footer>
-    </li>
-  )
+      <button onClick={ConfirmCart}>Confirmar Compra</button><br></br>
+      <button onClick={clearCart}>Eliminar Producto</button>
+    </div>
+    </>
+  );
 }
 
-export function Cart () {
-  const cartCheckboxId = useId()
-  const { cart, clearCart, addToCart } = useCart()
+export function Cart() {
+  const { cart, addToCart } = useCart();
+  const { clearCart } = useCart();
+  const { ConfirmCart } = useCart();
 
   return (
     <>
-      <label className='cart-button' htmlFor={cartCheckboxId}>
-        <CartIcon />
-      </label>
-      <input id={cartCheckboxId} type='checkbox' hidden />
-
-      <aside className='cart'>
-        <ul>
-          {cart.map(product => (
+      <div>
+        <h1>Productos Del Carrito</h1>
+        <div className="cart-container">
+          {cart.map((product) => (
             <CartItem
               key={product.id}
               addToCart={() => addToCart(product)}
+              clearCart={clearCart}
+              ConfirmCart={ConfirmCart}
               {...product}
             />
           ))}
-        </ul>
-
-        <button onClick={clearCart}>
-          <ClearCartIcon />
-        </button>
-      </aside>
+        </div>
+      </div>
     </>
-  )
+  );
 }
