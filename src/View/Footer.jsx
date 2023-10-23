@@ -1,3 +1,7 @@
+import { React } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook, faXTwitter, faInstagram, faPinterest } from '@fortawesome/free-brands-svg-icons'; // Import the appropriate icons from 'free-brands-svg-icons'
+
 export function Footer() {
   // const { filters } = useFilters()
 
@@ -26,22 +30,22 @@ export function Footer() {
             <ul className="list-inline">
               <li className="list-inline-item">
                 <a href="#" target="_blank">
-                  <i className="fab fa-facebook text-xl"></i>
+                  <FontAwesomeIcon icon={faFacebook} size="2x" />
                 </a>
               </li>
               <li className="list-inline-item">
                 <a href="#" target="_blank">
-                  <i className="fab fa-twitter text-xl"></i>
+                  <FontAwesomeIcon icon={faXTwitter} size="2x" />
                 </a>
               </li>
               <li className="list-inline-item">
                 <a href="#" target="_blank">
-                  <i className="fab fa-instagram text-xl"></i>
+                  <FontAwesomeIcon icon={faInstagram} size="2x" />
                 </a>
               </li>
               <li className="list-inline-item">
                 <a href="#" target="_blank">
-                  <i className="fab fa-pinterest text-xl"></i>
+                  <FontAwesomeIcon icon={faPinterest} size="2x" />
                 </a>
               </li>
             </ul>
