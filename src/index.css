@@ -253,3 +253,28 @@ code {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+@media (max-width: 768px) {
+  .responsive-div {
+    display: none;
+  }
+}
+
+/* Estilos para pantallas más grandes (opcional) */
+@media (min-width: 769px) {
+  .responsive-div {
+    display: block; /* Asegura que el div sea visible en pantallas más grandes */
+    font-size: 16px; /* Cambiar el tamaño de fuente en pantallas más grandes si es necesario */
+  }
+}
+/* Estilos para pantallas más pequeñas (móviles) */
+@media (max-width: 768px) {
+  .ms-auto {
+    margin-left: auto; /* Alinea el elemento a la derecha en pantallas pequeñas */
+  }
+
+  .cart-icon {
+    font-size: 24px; /* Cambiar el tamaño del icono en pantallas pequeñas */
+    margin-right: 10px; /* Añadir espacio a la derecha del icono */
+  }
+}
+

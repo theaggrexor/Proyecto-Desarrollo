@@ -4,7 +4,7 @@ import Productos from "./Producto";
 import Login from "./View/Login";
 import Contacto from "./View/Contacto";
 import Blog from "./View/blog";
-import Carrito from "./View/Carrito"
+import Carrito from "./View/Carrito";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {

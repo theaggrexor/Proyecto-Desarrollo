@@ -1,6 +1,7 @@
 import { useId } from "react";
 import { useCart } from "../hooks/useCart.js";
 import { CartIcon, RemoveFromCartIcon } from "./Icons.jsx";
+import { Container } from "react-bootstrap";
 
 function CartItem({ image, price, title, size }) {
   const { clearCart } = useCart();
@@ -31,6 +32,7 @@ export function Cart() {
   return (
     <>
       <div>
+        <Container>
         <h1>Productos Del Carrito</h1>
         <div className="cart-container">
           {cart.map((product) => (
@@ -43,6 +45,7 @@ export function Cart() {
             />
           ))}
         </div>
+        </Container>
       </div>
     </>
   );
