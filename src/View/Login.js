@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import Registro from "./Registro";
 
 function LoginForm() {
-  const [email] = useState("");
-  const [password] = useState("");
+  const [email, setEmail] = useState(""); // Usar estado para email
+  const [password, setPassword] = useState(""); // Usar estado para password
   const [isRegistering, setIsRegistering] = useState(false);
 
   const toggleForm = () => {
@@ -31,6 +31,7 @@ function LoginForm() {
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             type="email"
             value={email}
+            onChange={(e) => setEmail(e.target.value)} // Actualizar email con el cambio
             required
             placeholder="tuemail@example.com"
           />
@@ -47,6 +48,7 @@ function LoginForm() {
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             type="password"
             value={password}
+            onChange={(e) => setPassword(e.target.value)} // Actualizar password con el cambio
             required
             placeholder="Tu contraseña"
           />

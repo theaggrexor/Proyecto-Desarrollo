@@ -6,6 +6,7 @@ import Contacto from "./View/Contacto";
 import Blog from "./View/blog";
 import Carrito from "./View/Carrito";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import PaymentGateway from "./View/PaymentGateway";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
   <Route path="/Contacto" element={<Contacto />} />
   <Route path="/Blog" element={<Blog />} />
   <Route path="/Carrito" element={<Carrito/>} />
+  <Route path="/Pago" element={<PaymentGateway/>} />
 </Routes>
 
   );
