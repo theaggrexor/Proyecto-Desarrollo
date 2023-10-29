@@ -55,8 +55,10 @@ export function Cart() {
         </div>
       </Container>
       <div className="confirm-cart">
-        <div className="total-items">Items: {totalItems}</div>
+        <div className="total-items">Items: {totalItems}
         <div className="total">Total: ${total}</div>
+        </div>
+        
 
         <button className="confirm" onClick={handleConfirmCart}>Confirmar Compra</button><br></br>
         <button className="limpiarcarrito" onClick={clearCart}>
