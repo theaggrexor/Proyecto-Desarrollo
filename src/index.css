@@ -92,13 +92,11 @@ code {
 }
 
 .confirm-cart{
-
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px; 
   margin: 20px;
   align-items: center;
-  margin-left: 150px;
 }
 .limpiarcarrito{
   width: 45px;
@@ -532,17 +530,17 @@ code {
       transform: translateY(-2000px); }
      }
 
-     .titulo-pasarela{
-      
-      
+     .titulo-pasarela{      
       text-align: center;
      }
      .Title-container{
       display: flex;
       align-items: center;
+      justify-content: space-between;
       background-color: #333;
       color: white;
       height: 60px;
+      padding: 10px;
      }
      .Title-container button{
       background-color: #1f2029; /* Color de fondo del botón */
@@ -555,8 +553,14 @@ code {
      }
 
      .element2{
+      flex-grow: 1;
       text-align: center;
-      margin-right: 20px;
-      margin-left: 370px;
      }
+     @media (max-width: 600px) {
+      
+    
+      button {
+        margin-bottom: 10px;
+      }
+    }
 

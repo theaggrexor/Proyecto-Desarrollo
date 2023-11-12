@@ -40,7 +40,6 @@ export function Cart() {
   };
 
   return (
-    <div>
       <Container>
         <h1>Productos Del Carrito</h1>
         <div className="cart-container">
@@ -53,8 +52,7 @@ export function Cart() {
             />
           ))}
         </div>
-      </Container>
-      <div className="confirm-cart">
+        <div className="confirm-cart">
         <div className="total-items">Items: {totalItems}
         <div className="total">Total: ${total}</div>
         </div>
@@ -65,6 +63,6 @@ export function Cart() {
           <ClearCartIcon />
         </button>
       </div>
-    </div>
+      </Container>
   );
 }

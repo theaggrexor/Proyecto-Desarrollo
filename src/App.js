@@ -1,12 +1,12 @@
 import React from "react";
-import Home from "./View/Home";
-import Productos from "./Producto";
-import Login from "./View/Login";
-import Contacto from "./View/Contacto";
-import Blog from "./View/blog";
-import Carrito from "./View/Carrito";
+import Home from "./components/Home";
+import Productos from "./components/Vista-Producto.jsx";
+import Login from "./components/Login";
+import Contacto from "./components/Contacto";
+import Blog from "./components/blog";
+import Carrito from "./components/Carrito";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import PaymentGateway from "./View/PaymentGateway";
+import PaymentGateway from "./components/PaymentGateway";
 
 function App() {
   return (
