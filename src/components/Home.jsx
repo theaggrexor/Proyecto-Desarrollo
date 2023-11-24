@@ -63,7 +63,7 @@ const Home = () => {
         <br></br>
         <img
         alt=""
-        src="https://carmel.com.co/wp-content/uploads/2023/10/CRML_4_HOTDAYS2_Desktop.jpg"
+        src=""
       />
       </div>
       <Footer />
